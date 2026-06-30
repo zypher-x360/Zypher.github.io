@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Valhalla Studio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#111;
+color:white;
+}
+
+/* Barra */
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:65px;
+
+background:#4b0000;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px;
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
+
+}
+
+.menu{
+
+font-size:35px;
+cursor:pointer;
+
+}
+
+/* Menú */
+
+nav{
+
+position:fixed;
+
+top:65px;
+right:-230px;
+
+width:220px;
+
+background:#4b0000;
+
+transition:.4s;
+
+display:flex;
+flex-direction:column;
+
+}
+
+nav a{
+
+padding:18px;
+
+color:white;
+
+text-decoration:none;
+
+font-size:20px;
+
+}
+
+nav a:hover{
+
+background:#700000;
+
+}
+
+nav.activo{
+
+right:0;
+
+}
+
+/* Video */
+
+.hero{
+
+margin-top:65px;
+
+position:relative;
+
+height:420px;
+
+overflow:hidden;
+
+}
+
+.hero video{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+filter:blur(6px);
+
+}
+
+.overlay{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.35);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+}
+
+.overlay h1{
+
+font-size:55px;
+
+text-shadow:0 0 20px black;
+
+}
+
+/* Botón */
+
+.boton{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+.boton a{
+
+background:#7a0000;
+
+color:white;
+
+padding:16px 35px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-size:22px;
+
+}
+
+/* Sobre mí */
+
+#sobre{
+
+padding:60px 20px;
+
+text-align:center;
+
+}
+
+#sobre img{
+
+width:240px;
+max-width:90%;
+
+}
+
+#sobre h2{
+
+margin-top:20px;
+
+font-size:40px;
+
+}
+
+#sobre p{
+
+font-size:22px;
+
+color:#cfcfcf;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+⚔️ Valhalla Studio
+</div>
+
+<div class="menu" onclick="menu()">
+☰
+</div>
+
+</header>
+
+<nav id="nav">
+
+<a href="#" onclick="cerrar()">Inicio</a>
+
+<a href="#sobre" onclick="cerrar()">Sobre mí</a>
+
+</nav>
+
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+
+<source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+
+</video>
+
+<div class="overlay">
+
+<h1>Valhalla Studio</h1>
+
+</div>
+
+</section>
+
+<div class="boton">
+
+<a href="Juegos.html">
+
+Ver Juegos
+
+</a>
+
+</div>
+
+<section id="sobre">
+
+<img src="imagenes/avatar/avatar.png">
+
+<h2>Anton</h2>
+
+<p>Programador</p>
+
+</section>
+
+<script>
+
+function menu(){
+
+document.getElementById("nav").classList.toggle("activo");
+
+}
+
+function cerrar(){
+
+document.getElementById("nav").classList.remove("activo");
+
+}
+
+</script>
+
+</body>
+</html>
